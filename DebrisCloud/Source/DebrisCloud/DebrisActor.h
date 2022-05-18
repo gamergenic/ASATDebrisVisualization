@@ -23,7 +23,8 @@
 #define LIVE_URL_BASE TEXT("https://www.space-track.org")
  // Avoid spamming the space-track.org server when possible.  Point the request at a static file on your own
  // server like so:
-#define TEST_URL TEXT("http://localhost:1313/post/asat-2/fy-1c.json")
+#define TEST_URL TEXT("https://gamedevtricks.com/post/call-satcat-rest-api-from-ue-http/cosmos-1408-remaining.json")
+#define TEST_URL2 TEXT("https://gamedevtricks.com/post/call-satcat-rest-api-from-ue-http/fengyun-1c-remaining.json")
 
 // Be sure to read the space-track.org CAREFULLY before accessing the server.
 // https://space-track.org/documentation#user_agree
