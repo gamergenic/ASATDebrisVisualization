@@ -2,8 +2,66 @@
 Example UnrealEngine5 space-track.com REST api http client.
 
 Tutorial Link:  
-[Call a SatCat REST API from Unreal Engine](https://gamedevtricks.com/post/call-satcat-rest-api-from-ue-http/)
+[Call a SatCat REST API from Unreal Engine](https://gamedevtricks.com/post/call-satcat-rest-api-from-ue-http/) on gameDevTricks.com  
+[ASAT Code Tutorial 4: Call a SatCat REST API from Unreal Engine 5](https://stupidrockettricks.com/post/call-satcat-rest-api-from-ue-http/) on stupidRocketTricks.com  
 
+
+
+*Note: This is a post is part of a [multi-part series](/tags/asat-series).*  
+
+#### Http and JSON: Unreal Engine 5 C++
+
+Good morning, everyone.  Evening?  Whatever :).
+
+Today, we're going to use **Unreal Engine**'s **HTTP** and **JSON** modules to create an interesting little visualization.
+
+Along the way we're going to learn:
+* How to send HTTP requests from within Unreal Engine
+* How to parse a server's response (JSON)
+* How to query a "Satellite Catalog" database operated by the U.S. Strategic Command
+* How to get a list of active space debris objects associated with space weapons testing (with orbital data)
+* How to compute a position from orbital data
+* Where to find test data, and how to switch over to live data from the U.S. Strategic Command servers
+
+
+--- 
+
+#### On no!  An explosion above...
+
+You may have heard about a recent Russian Anti-Satellite (ASAT) test that created a bevvy of space debris.
+
+> Early in the morning of November 15, Moscow time, a Russian missile blasted a Russian satellite to smithereens. The destroyed satellite, **Kosmos-1408**, had been in orbit for nearly four decades. With at least 1,500 trackable pieces, and countless more too small for detection, the remains of Kosmos-1408 pose a threat to other objects in orbit. The destruction itself caused astronauts and cosmonauts aboard the International Space Station to shelter in space. It also risked harm to China’s taikonauts aboard the Tiangong space station.  
+[This week’s destroyed Russian satellite created even more dangerous space debris](https://www.popsci.com/technology/russian-missile-destroys-russian-satellite/)  
+  *BY KELSEY D. ATHERTON, Popular Science*
+
+{{< notice "note" >}}
+**What the eff was Russia thinking?**  At risk of injecting international politics into a game development blog...  The test was performed during the run-up to the Russian "Special Operations" in Ukraine.  The event was NOT a "test" - it was a statement.  "If you interfere with our space operations while we are in Ukraine, we can in turn destroy your own satellites".  [Russia made no mistake here](https://stupidrockettricks.com/post/asat-1/); they knew exactly what they were doing.
+{{< /notice >}}
+
+
+### A worthy goal
+#### Visualizing Anti-Satellite Test debris in orbit around Earth
+
+A Satellite Catalog (SatCat) contains information about objects in Earth's orbit.  We can query a SatCat for orbital debris created by the Russian Anti-Satellite "test".   While we're at it, we'll include debris from another destructive test, done by China in 2007.  There have been other anti-satellite tests, but very little remains debris in orbit aside from these two events.
+
+We'll get the debris object data from the REST API of a SatCat operated by the **U.S. Strategic Command**: [Space-Track.org](https://www.space-track.org/)
+
+If it sounds a bit serious, it is.
+> Air Force **Maj. Gen. David D. Thompson**, U.S. Strategic Command’s director of plans and policy at Offutt Air Force Base, Nebraska, said the release of new high-quality positional information on space debris of an unknown origin will help owner-operators better protect their satellites from these objects and ultimately create less space debris.  
+> “We run a predictive program that shows where the objects are, where they will be in the future, and the potential for these objects to run into each other,” Thompson said.  
+[Officials Expand Space-tracking Website](https://www.defense.gov/News/News-Stories/Article/Article/603125/officials-expand-space-tracking-website/)  
+U.S. Department *of* Defense 
+
+If you adhere to the [User Agreement](https://www.space-track.org/documentation#user_agree) you can obtain credentials to query the SatCat.  You'll need a Space-Track.org username and password here shortly, fyi.
+
+The app we build here will display a 3D map of Earth, update debris positions in real time, and let the user use the mouse to orbit and zoom the camera.
+
+[![Anti-Satellite Test Debris](http://img.youtube.com/vi/LL31I2sQfR4/0.jpg)](https://www.youtube.com/watch?v=LL31I2sQfR4 "HTTP from Unreal Engine: Visualizing Anti-Satellite Test Debris around Earth")
+
+
+
+
+---
 
 ### Example application on GitHub
 
@@ -175,8 +233,6 @@ Run the app again and check the Editor's Output Log.  You will see that you're n
 ##### One more time: don't spam Space-Track.org! 
 
 Space-Track.org asks API users to be responsible and adhere usage caps.  If you were actually building a visualization app for many users, you'd need to query the Space-Track.org server from your own server and cache the data.  If you cache the data your servers can then handle as many users as needed without adding additional load to the Space-Track.org servers.  Be careful not to violate the terms of use, of course, which prohibit arbitrarily redistributing data from the SatCat.
-
-
 
 
 [![p-to-the-minute 3D orbital map, showing debris from two anti-satellite tests, obtained via http request to space-track.org](https://gamedevtricks.com/post/call-satcat-rest-api-from-ue-http/ue-debris-map.jpg)](https://youtu.be/LL31I2sQfR4)
