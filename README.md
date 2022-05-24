@@ -11,8 +11,6 @@ Tutorial Link:
 
 #### Http and JSON: Unreal Engine 5 C++
 
-Good morning, everyone.  Evening?  Whatever :).
-
 Today, we're going to use **Unreal Engine**'s **HTTP** and **JSON** modules to create an interesting little visualization.
 
 Along the way we're going to learn:
@@ -33,10 +31,6 @@ You may have heard about a recent Russian Anti-Satellite (ASAT) test that create
 > Early in the morning of November 15, Moscow time, a Russian missile blasted a Russian satellite to smithereens. The destroyed satellite, **Kosmos-1408**, had been in orbit for nearly four decades. With at least 1,500 trackable pieces, and countless more too small for detection, the remains of Kosmos-1408 pose a threat to other objects in orbit. The destruction itself caused astronauts and cosmonauts aboard the International Space Station to shelter in space. It also risked harm to China’s taikonauts aboard the Tiangong space station.  
 [This week’s destroyed Russian satellite created even more dangerous space debris](https://www.popsci.com/technology/russian-missile-destroys-russian-satellite/)  
   *BY KELSEY D. ATHERTON, Popular Science*
-
-{{< notice "note" >}}
-**What the eff was Russia thinking?**  At risk of injecting international politics into a game development blog...  The test was performed during the run-up to the Russian "Special Operations" in Ukraine.  The event was NOT a "test" - it was a statement.  "If you interfere with our space operations while we are in Ukraine, we can in turn destroy your own satellites".  [Russia made no mistake here](https://stupidrockettricks.com/post/asat-1/); they knew exactly what they were doing.
-{{< /notice >}}
 
 
 ### A worthy goal
