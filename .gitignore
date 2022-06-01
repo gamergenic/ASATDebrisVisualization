@@ -70,6 +70,9 @@ DebrisCloud/Saved/*
 DebrisCloud/Intermediate/*
 DebrisCloud/Plugins/*/Intermediate/*
 
+# Get MaxQ from Unreal Engine Martketplace
+DebrisCloud/Plugins/MaxQ
+
 # Cache files for the editor to use
 DebrisCloud/DerivedDataCache/*
 

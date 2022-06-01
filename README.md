@@ -59,6 +59,8 @@ The app we build here will display a 3D map of Earth, update debris positions in
 
 ### Example application on GitHub
 
+#### Temporary, until Epic approves MaxQ for Unreal Engine Marketplace
+
 If you simply clone the repository and attempt to build it, you'll get a build error (By Design).
 
 ```
@@ -66,7 +68,7 @@ C:\git\gamedevtricks\ASATDebrisVisualization\DebrisCloud\Source\DebrisCloud.Targ
 ERROR: Expecting to find a type to be declared in a target rules named 'DebrisCloudTarget'.  This type must derive from the 'TargetRules' type defined by Unreal Build Tool.
 ```
 
-This happens because MaxQ is not committed to the repository.  One easy solution is to clone the MaxQ repository separately, and then add a symbolic link that maps the appropriate source subdirectory to the example application.
+This happens because MaxQ is not committed to the repository.  One easy solution is to clone the MaxQ repository separately, and then add a symbolic link that maps the appropriate plugins subdirectory to the example application.
 
 [MaxQ GitHub page](https://github.com/Gamergenic1/MaxQ/)  
 
@@ -82,13 +84,11 @@ git clone https://github.com/gamergenic/ASATDebrisVisualization.git
 rem - clone the MaxQ dependency
 git clone https://github.com/Gamergenic1/MaxQ.git
 
-rem - clean out the MaxQ directory so it can be replaced with a symbolic link
-rd /S /Q ASATDebrisVisualization\DebrisCloud\Source\MaxQ
-
 rem - create a directory junction in the sample project for MaxQ
-mklink /J ASATDebrisVisualization\DebrisCloud\Source\MaxQ MaxQ\Source\MaxQ
+mkdir ASATDebrisVisualization\DebrisCloud\Plugins
+mklink /J ASATDebrisVisualization\DebrisCloud\Plugins\MaxQ MaxQ\Plugins\MaxQ
 
-Junction created for ASATDebrisVisualization\DebrisCloud\Source\MaxQ <<===>> MaxQ\Source\MaxQ
+Junction created for ASATDebrisVisualization\DebrisCloud\Plugins\MaxQ <<===>> MaxQ\Plugins\MaxQ
 ```
 
 #### Generate Visual Studio project files

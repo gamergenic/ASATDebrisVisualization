@@ -14,6 +14,10 @@
 		}
 	],
 	"Plugins": [
+{
+			"Name": "MaxQ",
+			"Enabled": true
+		},
 		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
