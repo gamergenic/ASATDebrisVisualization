@@ -1,6 +1,10 @@
 # ASATDebrisVisualization
 Example UnrealEngine5 space-track.com REST api http client.
 
+### Note
+This plugin requires the *MaxQ Spaceflight Toolkit* plugin from the Unreal Engine Marketplace.  
+https://www.unrealengine.com/marketplace/en-US/product/146e96d801ed4d8d930b41bfeca53733  
+
 Tutorial Link:  
 [Call a SatCat REST API from Unreal Engine](https://gamedevtricks.com/post/call-satcat-rest-api-from-ue-http/) on gameDevTricks.com  
 [ASAT Code Tutorial 4: Call a SatCat REST API from Unreal Engine 5](https://stupidrockettricks.com/post/call-satcat-rest-api-from-ue-http/) on stupidRocketTricks.com  
