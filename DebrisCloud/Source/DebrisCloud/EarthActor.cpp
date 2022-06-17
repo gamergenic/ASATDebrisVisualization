@@ -40,7 +40,7 @@ void AEarthActor::BeginPlay()
     // Required for getgeophs, getelm
     ES_ResultCode ResultCode;
     FString ErrorMessage;
-    USpice::furnsh(ResultCode, ErrorMessage, TEXT("Content/Spice/Kernels/meta.tm"));
+    USpice::furnsh(ResultCode, ErrorMessage, TEXT("Spice/Kernels/meta.tm"));
 
     if (ResultCode != ES_ResultCode::Success)
     {
