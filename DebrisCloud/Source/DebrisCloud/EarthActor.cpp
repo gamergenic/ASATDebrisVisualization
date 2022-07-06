@@ -11,9 +11,10 @@
  */
 
 #include "EarthActor.h"
-#include "Spice.h"
 #include "Math/Vector.h"
 #include "Components/StaticMeshComponent.h"
+#include "SpiceMath.h"
+#include "Spice.h"
 
 // Sets default values
 AEarthActor::AEarthActor()
@@ -79,7 +80,7 @@ void AEarthActor::Tick(float DeltaTime)
         // rotation matrix.  So, ...
         USpice::m2q(ResultCode, ErrorMessage, toIAU, EarthRotation);
 
-        SetActorRotation(USpiceTypes::Swazzle(EarthRotation));
+        SetActorRotation(MaxQ::Math::Swizzle(EarthRotation));
     }
 
     // Get the sun's direction...
@@ -88,7 +89,7 @@ void AEarthActor::Tick(float DeltaTime)
     USpice::spkpos(ResultCode, ErrorMessage, et, psun, lt, TEXT("SUN"), TEXT("EARTH"), TEXT("J2000"));
     if (ResultCode == ES_ResultCode::Success)
     {
-        FVector SunDirection = USpiceTypes::Swizzle(psun);
+        FVector SunDirection = MaxQ::Math::Swizzle(psun);
         SunDirection.Normalize();
         MaterialInstance->SetVectorParameterValue("LightDirection", SunDirection);
     }

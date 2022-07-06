@@ -19,6 +19,7 @@
 #include "EngineUtils.h"
 #include "EarthActor.h"
 #include "Spice.h"
+#include "SpiceMath.h"
 
 // Sets default values
 ADebrisActor::ADebrisActor()
@@ -262,7 +263,7 @@ FVector ADebrisActor::LocationFromTLE(const FSEphemerisTime& et, const FSTLEGeop
         else
         {
             // The state is in Ref=J2000, and so is the scene, so no need to xform
-            scenegraphPosition = USpiceTypes::Swizzle(state.r);
+            scenegraphPosition = MaxQ::Math::Swizzle(state.r);
         }
     }
 
